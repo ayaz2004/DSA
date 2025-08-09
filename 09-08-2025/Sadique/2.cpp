@@ -30,7 +30,14 @@ public:
    }
 
    int longestAlternatingSubarray2(vector<int>& nums, int threshold){
-       
+       int ans=0, cnt=0;
+       for(int i=0; i<nums.size(); i++){
+         if(nums[i]>threshold) cnt=0;
+         else if(cnt>0 &&((nums[i-1]&1)^(nums[i]&1))) cnt++;
+         else cnt=(nums[i]%2==0) ? 1:0;
+         ans=max(ans, cnt);
+       }
+       return ans;
    }
 };
 
