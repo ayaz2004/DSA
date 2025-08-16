@@ -11,17 +11,17 @@ Print one integer: the number of occurrences.
 #include <bits/stdc++.h>
 using namespace std;
 
-int solve1(string s1, string s2){
-   int n=s1.size(), m=s2.size(), cnt=0;
-   for(int i=0; i<=n-m; i++){
-    string temp="";
-    for(int j=0; j<m; j++){
-        temp+=s1[i+j];
-    }
-    if(temp==s2) cnt++;
-   }
-    return cnt;
-}
+// int solve1(string s1, string s2){
+//    int n=s1.size(), m=s2.size(), cnt=0;
+//    for(int i=0; i<=n-m; i++){
+//     string temp="";
+//     for(int j=0; j<m; j++){
+//         temp+=s1[i+j];
+//     }
+//     if(temp==s2) cnt++;
+//    }
+//     return cnt;
+// }
 
 vector<int> lps(string s){
     int n=s.size();
@@ -68,12 +68,12 @@ int main(){
     cin>>n;
     cin>>m;
 
-    int ans1=solve1(n, m);
-    cout<<"The solution from brute force approch is: ";
-    cout<<ans1<<endl;
+    // int ans1=solve1(n, m);
+    // cout<<"The solution from brute force approch is: ";
+    // cout<<ans1<<endl;
 
     int ans2=solve2(n, m);
-    cout<<"The solution from optimal approach is: ";
+    // cout<<"The solution from optimal approach is: ";
     cout<<ans2<<endl;
 
     return 0;
